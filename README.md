@@ -4,7 +4,7 @@ Full stack implementation of the Blind Spot Management System (BSMS); an IoT-bas
 # Blind Spot Management System (BSMS)
 
 ### Author: Sai Rohan Kakarlapudi  
-University of Illinois Chicago | College of Engineering  
+University of Illinois Chicago | College of Engineering | UIC Honors College
 **Capstone Supervisor:** Evan McCarty  
 **Capstone Fellow:** Prof. Luis Pina  
 **Acknowledgment:** Patrick Troy  
