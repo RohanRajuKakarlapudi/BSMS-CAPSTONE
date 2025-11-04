@@ -1,0 +1,433 @@
+/* body {
+    margin: 0;
+    padding: 0;
+    background-color: #0e0e0e;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f0f0f0;
+  }
+  
+  .dashboard {
+    padding: 2rem 3rem;
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+    color: #2ecc71;
+    margin-bottom: 2rem;
+  }
+  
+  button {
+    padding: 1rem 2rem;
+    background: linear-gradient(to right, #2ecc71, #27ae60);
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transition: 0.3s ease;
+  }
+  button:hover {
+    background: linear-gradient(to right, #27ae60, #2ecc71);
+  }
+  
+  .layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .live-data {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    flex: 1;
+  }
+  
+  .card {
+    background-color: #1e1e1e;
+    border-left: 5px solid #2ecc71;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.6);
+    transition: 0.3s;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.8);
+  }
+  .card h2 {
+    font-size: 1.2rem;
+    color: #aaa;
+    margin-bottom: 0.7rem;
+  }
+  .card p {
+    font-size: 1.4rem;
+    color: #fff;
+    font-weight: bold;
+    line-height: 1.4;
+  }
+  .card.alert {
+    border-left-color: #e74c3c;
+    background: radial-gradient(circle at top left, #2c1e1e, #1a0d0d);
+    box-shadow: 0 0 16px rgba(231, 76, 60, 0.6);
+  }
+  
+  
+  .map-container {
+    width: 360px;
+    height: 280px;
+    background-color: #1a1a1a;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .map-container h2 {
+    color: #ccc;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .l-map {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #2b2b2b;
+    border-radius: 10px;
+    border: 1px solid #444;
+    padding: 0.5rem;
+    box-shadow: inset 0 0 5px #000;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    margin-bottom: 8px;
+  }
+  
+  .vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 180px;
+    width: 60px;
+    position: absolute;
+    right: 10px;
+    top: 60px;
+  }
+  
+  .spot {
+    background-color: #444;
+    color: #ccc;
+    font-size: 0.75rem;
+    width: 48px;
+    height: 40px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border: 2px solid #555;
+    transition: 0.2s ease;
+  }
+  .spot.active {
+    background-color: #e74c3c;
+    color: #fff;
+    border-color: #ff0000;
+  }
+  .spot.clear {
+    background-color: #2ecc71;
+    color: #fff;
+    border-color: #27ae60;
+  }
+  .spot:hover {
+    box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    transform: scale(1.05);
+  }
+  
+
+  .bs-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 70px;
+    right: 75px;
+  }
+  .bs-dot.active {
+    background-color: red;
+    box-shadow: 0 0 12px red;
+    animation: pulse 1.2s infinite;
+  }
+  .bs-dot.clear {
+    background-color: #2ecc71;
+    box-shadow: 0 0 6px #2ecc71;
+  }
+  
+  .bs-label {
+    position: absolute;
+    bottom: 55px;
+    right: 55px;
+    font-size: 0.7rem;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0px rgba(255, 0, 0, 0.7); }
+    50% { box-shadow: 0 0 12px rgba(255, 0, 0, 0.9); }
+    100% { box-shadow: 0 0 0px rgba(255, 0, 0, 0.7); }
+  }
+  
+  .lane-line-horizontal, .lane-line-vertical {
+    position: absolute;
+    border: 1px dashed #aaa;
+    opacity: 0.3;
+  }
+  .lane-line-horizontal {
+    width: 90%;
+    top: 50%;
+    left: 5%;
+  }
+  .lane-line-vertical {
+    height: 85%;
+    left: 72%;
+    top: 7%;
+  }
+   */
+
+
+   body {
+    margin: 0;
+    padding: 0;
+    background-color: #0e0e0e;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f0f0f0;
+  }
+  
+  .dashboard {
+    padding: 2rem 3rem;
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+    color: #2ecc71;
+    margin-bottom: 2rem;
+  }
+  
+  button {
+    padding: 1rem 2rem;
+    background: linear-gradient(to right, #2ecc71, #27ae60);
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transition: 0.3s ease;
+  }
+  
+  button:hover {
+    background: linear-gradient(to right, #27ae60, #2ecc71);
+  }
+  
+  .layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .live-data {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    flex: 1;
+  }
+  
+  .card {
+    background-color: #1e1e1e;
+    border-left: 5px solid #2ecc71;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.6);
+    transition: 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.8);
+  }
+  
+  .card h2 {
+    font-size: 1.2rem;
+    color: #aaa;
+    margin-bottom: 0.7rem;
+  }
+  
+  .card p {
+    font-size: 1.4rem;
+    color: #fff;
+    font-weight: bold;
+    line-height: 1.4;
+  }
+  
+  .card.alert {
+    border-left-color: #e74c3c;
+    background: radial-gradient(circle at top left, #2c1e1e, #1a0d0d);
+    box-shadow: 0 0 16px rgba(231, 76, 60, 0.6);
+  }
+  
+  /* MAP SECTION */
+  .map-container {
+    width: 360px;
+    height: 280px;
+    background-color: #1a1a1a;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .map-container h2 {
+    color: #ccc;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .l-map {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #2b2b2b;
+    border-radius: 10px;
+    border: 1px solid #444;
+    padding: 0.5rem;
+    box-shadow: inset 0 0 5px #000;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    margin-bottom: 8px;
+  }
+  
+  .vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 180px;
+    width: 60px;
+    position: absolute;
+    right: 10px;
+    top: 60px;
+  }
+  
+  .spot {
+    background-color: #444;
+    color: #ccc;
+    font-size: 0.75rem;
+    width: 48px;
+    height: 40px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border: 2px solid #555;
+    transition: 0.2s ease;
+  }
+  
+  .spot.active {
+    background-color: #e74c3c;
+    color: #fff;
+    border-color: #ff0000;
+  }
+  
+  .spot.clear {
+    background-color: #2ecc71;
+    color: #fff;
+    border-color: #27ae60;
+  }
+  
+  .spot:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+  }
+  
+  /* Blind Spot Dot */
+  .bs-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 135px;
+    right: 127px;
+  }
+  
+  .bs-dot.active {
+    background-color: red;
+    box-shadow: 0 0 12px red;
+    animation: pulse 1.2s infinite;
+  }
+  
+  .bs-dot.clear {
+    background-color: #2ecc71;
+    box-shadow: 0 0 6px #2ecc71;
+  }
+  
+  .bs-label {
+    position: absolute;
+    bottom: 115px;
+    right: 110px;  /*Add a new spot on teh map BS002  */
+    font-size: 0.7rem;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  /* Lane lines */
+  .lane-line-horizontal, .lane-line-vertical {
+    position: absolute;
+    border: 1px dashed #aaa;
+    opacity: 0.3;
+  }
+  
+  .lane-line-horizontal {
+    width: 65%;
+    top: 46%;
+    left: 3%;
+  }
+  
+  .lane-line-vertical {
+    height: 50%;
+    left: 65%;
+    top: 45%;
+  }
+  
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0px rgba(255, 0, 0, 0.7); }
+    50% { box-shadow: 0 0 12px rgba(255, 0, 0, 0.9); }
+    100% { box-shadow: 0 0 0px rgba(255, 0, 0, 0.7); }
+  }
+  
+  .spot.booked {
+    background-color: #f1c40f;
+    color: #000;
+    border-color: #f39c12;
+  }
+  .card p {
+    font-size: 1.1rem;  /* or 1.2rem */
+    margin: 0.4rem 0;
+  }
+  
+  
